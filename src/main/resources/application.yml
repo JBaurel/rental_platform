@@ -2,7 +2,7 @@ spring:
   application:
     name: rental-platform
   datasource:
-    url: ${DB_URL:jdbc:postgresql://localhost:5432/rental}
+    url: ${DB_URL:jdbc:postgresql://localhost:5433/rental}
     username: ${DB_USER:rental}
     password: ${DB_PASSWORD:rental}
   jpa:
