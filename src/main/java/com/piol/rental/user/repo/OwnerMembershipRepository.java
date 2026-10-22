@@ -3,11 +3,13 @@ package com.piol.rental.user.repo;
 import com.piol.rental.user.dto.SpaceRef;
 import com.piol.rental.user.model.OwnerMembership;
 import com.piol.rental.user.model.OwnerMembershipId;
+import com.piol.rental.user.service.SpaceAccess;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.UUID;
 
 public interface OwnerMembershipRepository extends JpaRepository<OwnerMembership, OwnerMembershipId> {

@@ -2,6 +2,7 @@ package com.piol.rental.user.dto;
 
 import com.piol.rental.user.model.PlatformRole;
 
+import java.util.List;
 import java.util.UUID;
 
 public record MeResponse(
