@@ -20,7 +20,7 @@ public class CorrelationIdFilter extends OncePerRequestFilter {
     public static final String HEADER_NAME = "X-Correlation-Id";
     public static final String MDC_KEY = "correlationId";
 
-    private static final Pattern VALID = Pattern.compile("\"^[A-Za-z0-9_-]{8,64}$\"");
+    private static final Pattern VALID = Pattern.compile("^[A-Za-z0-9_-]{8,64}$");
     @Override
     protected void doFilterInternal(HttpServletRequest request,
                                     HttpServletResponse response,
