@@ -13,9 +13,27 @@ spring:
       hibernate:
         jdbc:
           time_zone: UTC
+  cache:
+    type: caffeine
+    cache-names: userAccess,userSpaces,spaceAccess
+    caffeine:
+      # Délai maximal de prise en compte d'une suspension / d'un retrait de droits
+      spec: maximumSize=10000,expireAfterWrite=30s
   flyway:
     enabled: true
     locations: classpath:db/migration
+
+app:
+  jwt:
+    # Au moins 32 caractères. En production : variable JWT_SECRET (ex. générée par un gestionnaire de secrets)
+    secret: ${JWT_SECRET:dev-only-change-me-dev-only-change-me-0123}
+    issuer: piol-rental
+    access-ttl: 15m
+    refresh-ttl: 3d
+  bootstrap-admin:
+    # Premier administrateur, créé au démarrage s'il n'existe aucun admin (mot de passe : 12 caractères min.)
+    email: ${APP_BOOTSTRAP_ADMIN_EMAIL:}
+    password: ${APP_BOOTSTRAP_ADMIN_PASSWORD:}
 
 management:
   endpoints:

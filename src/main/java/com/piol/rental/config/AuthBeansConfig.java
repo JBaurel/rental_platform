@@ -3,6 +3,9 @@ package com.piol.rental.config;
 import com.nimbusds.jose.jwk.source.ImmutableSecret;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.boot.context.properties.ConfigurationPropertiesScan;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -16,6 +19,7 @@ import java.nio.charset.StandardCharsets;
 
 /** Signature/vérification des JWT (HS256) et hachage des mots de passe. */
 @Configuration
+@EnableConfigurationProperties(JwtProperties.class)
 public class AuthBeansConfig {
 
     private static final Logger log = LoggerFactory.getLogger(AuthBeansConfig.class);
