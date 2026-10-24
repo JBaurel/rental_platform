@@ -34,7 +34,6 @@ services:
     ports:
       - "8080:8080"
 
-  # Phase 4 : décommenter quand la queue et le cache seront introduits
   # redis:
   #   image: redis:7-alpine
   #   ports: ["6379:6379"]
